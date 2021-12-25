@@ -14,9 +14,9 @@ contract WOLNFT is ERC721URIStorage, Ownable {
     constructor() ERC721("World Of Legends NFT", "WOLNFT") {}
 
     function mintToken(string memory tokenURI)
-        public
-        onlyOwner
-        returns (uint256)
+    external
+    onlyOwner
+    returns (uint256)
     {
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
@@ -26,12 +26,12 @@ contract WOLNFT is ERC721URIStorage, Ownable {
         return newItemId;
     }
 
-    function burnToken(uint256 tokenId) public {
+    function burnToken(uint256 tokenId) external {
         _burn(tokenId);
         emit TokenBurned(msg.sender, tokenId);
     }
 
-    function burnTokenList(uint256[] memory tokenIds) public {
+    function burnTokenList(uint256[] memory tokenIds) external {
         for (uint256 i = 0; i < tokenIds.length; i++) {
             burnToken(tokenIds[i]);
         }

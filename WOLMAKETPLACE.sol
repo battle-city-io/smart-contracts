@@ -12,14 +12,13 @@ contract WolMarketPlace {
         uint256 price,
         string uri
     );
-    event Buy(bytes32 indexed offeringId, address indexed buyer);
+    event OfferingBought(bytes32 indexed offeringId, address indexed buyer);
     event OperatorChanged(address previousOperator, address newOperator);
     event OfferingClosed(bytes32 _offeringId);
 
     address operator;
-    address wolTokenContractAddress;
     uint256 offeringNonce;
-    IERC20 public WOLTOKEN;
+    IERC20 public immutable WOLTOKEN;
 
     struct offering {
         address offerer;
@@ -34,7 +33,6 @@ contract WolMarketPlace {
 
     constructor(address _operator, address _wolTokenContractAddress) {
         operator = _operator;
-        wolTokenContractAddress = _wolTokenContractAddress;
         WOLTOKEN = IERC20(_wolTokenContractAddress);
     }
 
@@ -66,46 +64,51 @@ contract WolMarketPlace {
     function buy(address _buyer, bytes32 _offeringId) external payable {
         require(
             msg.sender == operator,
-            "only the operator can change the current operator"
+            "Only the operator can change the current operator"
         );
         uint256 buyerBalance = WOLTOKEN.balanceOf(_buyer);
         uint256 allowanceBalance = WOLTOKEN.allowance(_buyer, address(this));
+        offering offer = offeringRegistry[_offeringId];
         require(
-            allowanceBalance >= offeringRegistry[_offeringId].price,
+            allowanceBalance >= offer.price,
             "Allowance exceed limit"
         );
         require(
-            buyerBalance >= offeringRegistry[_offeringId].price,
-            "Not enough funds to buy"
+            buyerBalance >= offer.price,
+            "Insufficient balance"
         );
         require(
-            offeringRegistry[_offeringId].closed != true,
+            !offer.closed,
             "Offering is closed"
         );
         ERC721 hostContract = ERC721(
-            offeringRegistry[_offeringId].hostContract
+            offer.hostContract
         );
         hostContract.safeTransferFrom(
-            offeringRegistry[_offeringId].offerer,
+            offer.offerer,
             _buyer,
-            offeringRegistry[_offeringId].tokenId
+            offer.tokenId
         );
         WOLTOKEN.transferFrom(
             _buyer,
-            offeringRegistry[_offeringId].offerer,
-            offeringRegistry[_offeringId].price -
-                offeringRegistry[_offeringId].marketFee
+            offer.offerer,
+            offer.price -
+            offer.marketFee
         );
         WOLTOKEN.transferFrom(
             _buyer,
             operator,
-            offeringRegistry[_offeringId].marketFee
+            offer.marketFee
         );
-        offeringRegistry[_offeringId].closed = true;
-        emit Buy(_offeringId, _buyer);
+        offer.closed = true;
+        emit OfferingBought(_offeringId, _buyer);
     }
 
     function closeOffer(bytes32 _offeringId) external {
+        require(
+            msg.sender == operator,
+            "Only the operator can change the current operator"
+        );
         offeringRegistry[_offeringId].closed = true;
         emit OfferingClosed(_offeringId);
     }
@@ -113,17 +116,22 @@ contract WolMarketPlace {
     function closeOfferList(bytes32[] _offeringIds) external {
         require(
             msg.sender == operator,
-            "only the operator can change the current operator"
+            "Only the operator can change the current operator"
         );
         for (uint256 i = 0; i < _offeringIds.length; i++) {
-            closeOffer(_offeringIds[i]);
+            offeringRegistry[_offeringIds[i]].closed = true;
+            emit OfferingClosed(_offeringId);
         }
     }
 
     function changeOperator(address _newOperator) external {
         require(
+            msg.sender != address(0),
+            "Check if the sender address is address 0x0"
+        );
+        require(
             msg.sender == operator,
-            "only the operator can change the current operator"
+            "Only the operator can change the current operator"
         );
         address previousOperator = operator;
         operator = _newOperator;
