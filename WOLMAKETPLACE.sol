@@ -68,7 +68,7 @@ contract WolMarketPlace {
         );
         uint256 buyerBalance = WOLTOKEN.balanceOf(_buyer);
         uint256 allowanceBalance = WOLTOKEN.allowance(_buyer, address(this));
-        offering offer = offeringRegistry[_offeringId];
+        offering storage offer = offeringRegistry[_offeringId];
         require(
             allowanceBalance >= offer.price,
             "Allowance exceed limit"
@@ -113,14 +113,14 @@ contract WolMarketPlace {
         emit OfferingClosed(_offeringId);
     }
 
-    function closeOfferList(bytes32[] _offeringIds) external {
+    function closeOfferList(bytes32[] memory _offeringIds) external {
         require(
             msg.sender == operator,
             "Only the operator can change the current operator"
         );
         for (uint256 i = 0; i < _offeringIds.length; i++) {
             offeringRegistry[_offeringIds[i]].closed = true;
-            emit OfferingClosed(_offeringId);
+            emit OfferingClosed(_offeringIds[i]);
         }
     }
 

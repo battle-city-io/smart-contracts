@@ -33,7 +33,8 @@ contract WOLNFT is ERC721URIStorage, Ownable {
 
     function burnTokenList(uint256[] memory tokenIds) external {
         for (uint256 i = 0; i < tokenIds.length; i++) {
-            burnToken(tokenIds[i]);
+            _burn(tokenIds[i]);
+            emit TokenBurned(msg.sender, tokenIds[i]);
         }
     }
 }
