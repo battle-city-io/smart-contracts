@@ -126,8 +126,8 @@ contract WolMarketPlace {
 
     function changeOperator(address _newOperator) external {
         require(
-            msg.sender != address(0),
-            "Check if the sender address is address 0x0"
+            _newOperator != address(0),
+            "Check if the new operator address is address 0x0"
         );
         require(
             msg.sender == operator,
