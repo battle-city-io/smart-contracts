@@ -8,7 +8,7 @@ This repository also contains official addresses of BattleCity.io (owned by Mang
 
 <h2>WOL and WOLNFT contracts deployed on Polygon and BSC chain </h2>
 
-- [POLYGON](https://github.com/battle-city-io/smart-contracts/blob/master/POLYGON/README.md)
+<h1> [POLYGON](https://github.com/battle-city-io/smart-contracts/blob/master/POLYGON/README.md) </h1>
 
 <h2> WOL contract</h2>
 This contract holds BattleCity.io's data and is ERC-20 compliant.
@@ -24,7 +24,7 @@ Source code: [WOLNFT.sol](https://github.com/battle-city-io/smart-contracts/blob
 
 MainNet address: [0x0ca0C27c00F8B4b7188e399CAD3Dc205240C5792](https://polygonscan.com/address/0x0ca0c27c00f8b4b7188e399cad3dc205240c5792)
 
-- [BSC](https://github.com/battle-city-io/smart-contracts/blob/master/BSC/README.md)
+<h1>[BSC](https://github.com/battle-city-io/smart-contracts/blob/master/BSC/README.md)</h1>
 
 Source code: [WOL.sol](https://github.com/battle-city-io/smart-contracts/blob/master/BSC/WOL.sol)
 
