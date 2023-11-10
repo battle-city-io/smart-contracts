@@ -8,9 +8,9 @@ This repository also contains official addresses of BattleCity.io (owned by Mang
 
 <h2>WOL and WOLNFT contracts deployed on Polygon and BSC chain </h2>
 
-#Polygon(https://github.com/battle-city-io/smart-contracts/POLYGON/blob/master/README.md)
+#[POLYGON](https://github.com/battle-city-io/smart-contracts/blob/master/POLYGON/README.md)
 
-#BSC(https://github.com/battle-city-io/smart-contracts/BSC/blob/master/README.md)
+#[BSC](https://github.com/battle-city-io/smart-contracts/blob/master/BSC/README.md)
 
 
 #WOL #WOLNFT #BattleCity #MangoX
