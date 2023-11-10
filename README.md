@@ -1,4 +1,4 @@
-<h3> Public Smart Contracts </h3>
+<h2> Public Smart Contracts </h2>
 
 Even though all public contracts' source code will be published on Binance Smart Chain, this repository acts as a centralized place for people to read and review those contracts more easily.
 
