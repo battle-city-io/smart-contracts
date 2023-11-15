@@ -25,7 +25,7 @@ This contract holds BattleCity.io's data and is BEP-721 compliant.
 
 Source code: [WOLNFT.sol](https://github.com/battle-city-io/smart-contracts/blob/master/BSC/WOLNFT.sol)
 
-MainNet address: [0x749ba5b0c260a983336150e35615024763aa7439](https://bscscan.com/token/0x749ba5b0c260a983336150e35615024763aa7439)
+MainNet address: [0x662FDd5c1D5798423344B10E3Fb2DE17Ae651999](https://bscscan.com/token/0x662FDd5c1D5798423344B10E3Fb2DE17Ae651999)
 
 <h2> WOL NFT contract represents nfts sold on gate.io</h2>
 This contract holds BattleCity.io's data and is BEP-721 compliant.

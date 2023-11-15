@@ -11,13 +11,20 @@ This contract holds BattleCity.io's data and is ERC-20 compliant.
 
 Source code: [WOL.sol](https://github.com/battle-city-io/smart-contracts/blob/master/POLYGON/WOL.sol)
 
-MainNet address: [0xf0ba8248a1ac7447c0e39afed56e0493a2264e57](https://polygonscan.com/token/0xf0ba8248a1ac7447c0e39afed56e0493a2264e57)
+MainNet address: [0x9c1be6c7fa57531a8a4e217dc4b005aae0ce2344](https://polygonscan.com/token/0x9c1be6c7fa57531a8a4e217dc4b005aae0ce2344)
 
 <h2> WOL NFT contract</h2>
 This contract holds BattleCity.io's data and is ERC-721 compliant.
 
 Source code: [WOLNFT.sol](https://github.com/battle-city-io/smart-contracts/blob/master/POLYGON/WOLNFT.sol)
 
-MainNet address: [0x0ca0C27c00F8B4b7188e399CAD3Dc205240C5792](https://polygonscan.com/address/0x0ca0c27c00f8b4b7188e399cad3dc205240c5792)
+MainNet address: [0xa654c1984Da604DE9ed99C34176fE3409D132b5B](https://polygonscan.com/token/0xa654c1984Da604DE9ed99C34176fE3409D132b5B)
+
+<h2> WOL NFT contract on crypto.com</h2>
+This contract holds BattleCity.io's data and is ERC-721 compliant.
+
+Source code: [WOLNFT(CRYPTO.COM).sol](https://github.com/battle-city-io/smart-contracts/blob/master/POLYGON/WOLNFT(CRYPTO.COM).sol)
+
+MainNet address: [0x0ca0C27c00F8B4b7188e399CAD3Dc205240C5792](https://polygonscan.com/token/0x0ca0C27c00F8B4b7188e399CAD3Dc205240C5792)
 
 #WOL #WOLNFT #BattleCity #MangoX
