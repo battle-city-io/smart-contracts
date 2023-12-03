@@ -25,6 +25,6 @@ This contract holds BattleCity.io's data and is ERC-721 compliant.
 
 Source code: [WOLNFT(CRYPTO.COM).sol](https://github.com/battle-city-io/smart-contracts/blob/master/POLYGON/WOLNFT(CRYPTO.COM).sol)
 
-MainNet address: [0x0ca0C27c00F8B4b7188e399CAD3Dc205240C5792](https://polygonscan.com/token/0x0ca0C27c00F8B4b7188e399CAD3Dc205240C5792)
+MainNet address: [0x390D29f84EA6f2aE7A36cB70B4E203127556fDb2](https://polygonscan.com/token/0x390D29f84EA6f2aE7A36cB70B4E203127556fDb2)
 
 #WOL #WOLNFT #BattleCity #MangoX
